@@ -1,0 +1,83 @@
+{% extends "structure.html" %}
+{% block head %}
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    
+{% endblock head %}
+{% block main %}
+<div>
+    <div class="a-content col s12" >
+        <h1>  Enter your tasks:</h1>
+       
+        <div class="row">
+            <form class="col s12" action="dashboard" method="POST">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea name="listname" id="textarea1" class="materialize-textarea"></textarea>
+                  <label for="textarea1">Tasks</label>
+                </div>
+              </div>
+              <button  class="btn waves-effect waves-light" type="submit" name="action">Add task</button>
+            </form>
+          </div>
+          
+         <p style="color: red;">{{list_eror}}</p> 
+         <div class="row">
+          <div class="col s3"> 
+            <a href="delete_all/{{username}}"> 
+             <i class="medium material-icons">delete_forever</i>
+             <p style="font-size: 16px; color: red;"> <span>Delete all</span></p>
+            </a>
+            </div>
+          <div class=" col s4 yellow accent-2 waves-effect waves-light">
+            <p style="font-size: 18px; color: red;"> <span> Done task</span></p>
+          </div>
+          <div class=" col s5 deep-purple darken-3 waves-effect waves-light">
+            <p style="font-size: 18px; ">  <span> In process task</span></p>
+          </div>
+         </div>
+    {% for lists in list_items%}
+    {% if lists[4] %}
+      <div class="row">
+          <div class="col s12">
+            <div class="card yellow accent-2 waves-effect waves-light darken-1 col s12">
+              <div class="card-content white-text">
+                <textarea name="listname" class="card-title materialize-textarea"> {{lists[1]}} </textarea>
+                <a href="list/change/{{lists[0]}}" class="secondary-content waves-effect waves-light"> <i class="material-icons ">send</i></a>
+              </div>
+              <div class="card-action">
+                <a  href="list/delete/{{lists[0]}}">  <i class="material-icons">delete</i></a>
+                <a href="list/done/{{lists[0]}}">  <i class="material-icons">done</i></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+            {% else  %}
+              <div class="row">
+                <div class="col s12">
+              <div class="card deep-purple darken-3 waves-effect waves-light darken-1 col s12">
+                <div class="card-content white-text">
+                    <textarea name="listname" class="card-title materialize-textarea"> {{lists[1]}} </textarea>
+                    <a href="list/change/{{lists[0]}}" class="secondary-content waves-effect waves-light"> <i class="material-icons ">send</i></a>
+                  </form>
+                </div>
+                <div class="card-action">
+                  <a href="list/delete/{{lists[0]}}"> <i class="material-icons">delete</i></a>
+                  <a href="list/done/{{lists[0]}}">  <i class="material-icons">done</i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            {%endif%}
+                
+    {%endfor%}
+  </div>
+</div>
+<h2>
+    {{message}}
+</h2>
+
+
+{% endblock main %}

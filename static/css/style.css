@@ -1,0 +1,19 @@
+
+p {
+    display: block;
+    font-size: 32px;
+    color: blanchedalmond;
+}
+h1{
+    color: blue;
+}
+div {
+    display: block;
+}
+.a-content {
+    max-width: 648px;
+    margin: 3rem auto;
+}
+footer, header, nav, section {
+    display: block;
+}

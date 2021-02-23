@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+         <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      </head>
+    <body>
+        <h1>
+            Hello, {{admin_username}}
+        </h1>
+        <h1>
+            <a href="logout/admin">
+                Log out
+            </a>
+        </h1>
+        <div class="a-content">
+        <div class="col s12">
+           <ul class="collapsible expandable">
+                <li >
+                  <div class="collapsible-header"><i class="material-icons">filter_drama</i>Total users signned up : {{total_users}}</div>
+                  <div class="collapsible-body"><span>
+                    <table>
+                        <thead>
+                          <tr>
+                              <th>Username</th>
+                              <th>Reg_date</th>
+                          </tr>
+                        <tbody>
+                          {% for user in total_users_all %}
+                            <tr>
+                            <td> {{user[0]}} </td>
+                            <td> {{user[1]}} </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                  </span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">place</i>Total lists: {{total_lists}}</div>
+                  <div class="collapsible-body"><span>
+                    <table>
+                        <thead>
+                          <tr>
+                              <th>List name</th>
+                              <th>Created by</th>
+                              <th>Created on</th>
+                              <th>Done</th>
+                          </tr>
+                        <tbody>
+                          {% for user in total_lists_all %}
+                            <tr>
+                            <td> {{user[0]}} </td>
+                            <td> {{user[1]}} </td>
+                            <td> {{user[2]}} </td>
+                            <td>
+                                {% if user[3] %}
+                                Done 
+                                {%else%} 
+                                No
+                                {%endif%}
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                  </span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">whatshot</i>Total users signned up last 24 hours : {{total_users_24}}</div>
+                  <div class="collapsible-body"><span>
+                    <table>
+                        <thead>
+                          <tr>
+                              <th>Username</th>
+                              <th>Reg_date</th>
+                          </tr>
+                        <tbody>
+                          {% for user in total_users_24_all %}
+                            <tr>
+                            <td> {{user[0]}} </td>
+                            <td> {{user[1]}} </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                  </span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Total lists last 24 hours  : {{total_lists_24}}</div>
+                    <div class="collapsible-body"><span>
+                        <table>
+                            <thead>
+                              <tr>
+                                  <th>List name</th>
+                                  <th>Created by</th>
+                                  <th>Created on</th>
+                                  <th>Done</th>
+                              </tr>
+                            <tbody>
+                              {% for user in total_lists_24_all %}
+                                <tr>
+                                <td> {{user[0]}} </td>
+                                <td> {{user[1]}} </td>
+                                <td> {{user[2]}} </td>
+                                <td>
+                                    {% if user[3] %}
+                                    Done 
+                                    {%else%} 
+                                    No
+                                    {%endif%}
+                                </td>
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                    </span></div>
+                  </li>
+              </ul>
+        </div>
+    </div>
+        </body>
+          <script>
+            var elem = document.querySelector('.collapsible.expandable');
+                var instance = M.Collapsible.init(elem, {
+                accordion: true
+                });
+      </script>
+</html>
+
+
