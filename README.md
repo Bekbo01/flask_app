@@ -4,7 +4,7 @@
 
 
 
-![](https://komarev.com/ghpvc/?username=kalebu)
+![](https://komarev.com/ghpvc/?username=Bekbo01)
 
 
 <samp>
@@ -18,6 +18,6 @@
 </samp>
 
 
-[![Naereen's github trophy](https://github-profile-trophy.vercel.app/?username=kalebu&row=1&no-bg=true)](https://github.com/ryo-ma/github-profile-trophy)
+[![Bekbo's github trophy](https://github-profile-trophy.vercel.app/?username=Bekbo01&row=1&no-bg=true)](https://github.com/ryo-ma/github-profile-trophy)
 
-![Kalebu github stats](https://github-readme-stats.vercel.app/api?username=kalebu&count_private=true&show_icons=true) **|**
+![Bekbo github stats](https://github-readme-stats.vercel.app/api?username=Bekbo01&count_private=true&show_icons=true) **|**
